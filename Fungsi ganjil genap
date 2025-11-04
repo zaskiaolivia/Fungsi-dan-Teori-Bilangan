@@ -1,0 +1,7 @@
+def ganjil_genap(n):
+    if n % 2 == 0
+        return "genap"
+    else:
+        return "ganjil"
+bil = int(input("masukkan bilangan: "))
+print(f"{bil} adalah bilangan {ganjil_genap(bil)}")
