@@ -1,0 +1,8 @@
+x_list = [0,1,2,3,4]
+print(2 * x_list + 3) ERROR
+file "<python-input-18>", line 1
+syntaxError: invalid syntax
+import numpy as np
+x_array = np.array([0,1,2,3,4])
+print(2 * x-array + 3) #
+[ 3 5 7 9 11 ]
