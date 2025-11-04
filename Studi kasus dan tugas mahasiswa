@@ -1,0 +1,147 @@
+#Cara menghitung Fungsi dengan Python tanpa NumPy kemudian bandingkan ketika menggunakan NumPy
+#fungsi tanpa numpy
+>>> #f(x) = 3 * x * 2 + 2 * x + 1               #for x = [0, 1, 2, 3, 4]
+>>> def f(x):
+...     return 3 * x 2 + 2 * x + 3
+...
+>>> x_fungsi = [0, 1, 2, 3, 4]
+>>> fungsi = [f(x) for x in x_fungsi]
+>>> print(fungsi) 
+[1, 9, 17, 25, 33] 
+>>> #f(x) = 3 * x ** 2 + 2x + 1                 #for x = [0, 1, 2, 3, 4]
+>>> def f(x):
+...     return 3 * x ** 2 + 2x + 1
+...
+>>> x_fungsi = [0, 1, 2, 3, 4]
+>>> fungsi = [f(x) for x in x_fungsi]
+>>> print(fungsi)
+[1, 6, 17, 34, 57]
+#fungsi menggunakan numpy
+>>> #f(x) = 3 * x * 2 + 2 * x + 1               #for x = [0, 1, 2, 3, 4]
+>>> import numpy as np
+>>> x = np.array([0, 1, 2, 3, 4])
+>>> y = 3 * x * 2 + 2 * x + 1
+>>> print(y)
+[1 9 17 25 33]
+>>> #f(x) = 3*x** 2 + 2 * x + 1                 #for x = [0, 1, 2, 3, 4]
+>>> import numpy as np
+>>> x = np.array([0, 1, 2, 3, 4])
+>>> y = 3 *** 2 + 2 * x + 1
+>>> print(y)
+[1 6 17 34 57]
+#Deteksi bilangan ganjil atau genap
+>>> def ganjil_genap(n):
+...     if n % 2 == 0:
+...              return "Genap"
+...     else:
+...              return "Ganjil"
+>>> bil = int(input("Masukkan bilangan: "))
+Masukkan bilangan: 7
+>>> print(f"{bil} adalah bilangan {ganjil_genap(bil)}")
+7 adalah bilangan Ganjil
+#FPB dan KPK
+>>> def fpb(a, b):
+...     while b != 0:
+...             a, b = b, a % b
+...     return a
+>>> def kpk(a, b):
+...     return abs(a * b) // fpb(a, b)
+...
+>>> x = int(input("Masukkan bilangan pertama: "))
+Masukkan bilangan pertama: 13
+>>> y = int(input("Masukkan bilangan kedua: "))
+Masukkan bilangan kedua: 11
+>>> print(f"FPB dari {x} dan {y} adalah {fpb(x, y)}")
+FPB dari 13 dan 11 adalah 1
+>>> print(f"KPK dari {x} dan {y} adalah {kpk(x, y)}")
+KPK dari 13 dan 11 adalah 143
+#Fungsi Fibonacci (Rekursif)
+>>> def fibonacci(n):
+...     if n <= 1:
+...             return n
+...     else:
+...             return fibonacci(n-1) + fibonacci(n-2)
+...
+>>> n = int(input("Masukkan jumlah suku: "))
+Masukkan jumlah suku: 7
+>>> print("Deret Fibonacci:")
+Deret Fibonacci:
+>>> for i in range(n):
+print(fibonacci(i), end=" ")
+0 1 1 2 3 5 8
+#Menentukan bilangan prima
+>>> def is_prima(n):
+...     if n <= 1:
+...             return False
+...     for i in range(2, int(n**0.5) + 1):
+...             if n % i == 0:
+...                     return False
+...     return True
+...
+>>> angka = int(input("Masukkan bilangan: "))
+Masukkan bilangan: 11
+>>> if is_prima(angka):
+...     print(angka, "adalah bilangan prima")
+... else:
+>>> print(angka, "bukan bilangan prima")
+11 adalah bilangan prima
+#Modifikasi fungsi Fibonacci agar hasilnya disimpan dalam list dan ditampilkan sekaligus
+>>> def fibonacci(n):
+...     if n <= 1:
+...             return n
+...     else:
+...             return fibonacci(n-1) + fibonacci(n-2)
+...
+>>> n = int(input("Masukkan jumlah suku: "))
+Masukkan jumlah suku: 5
+>>> list_fib = []
+>>> for i in range(n):
+...     list_fib.append(fibonacci(i))
+...
+>>> print("List Fibonacci jumlah suku:", n)
+List Fibonacci jumlah suku: 
+>>> print("List Fibonacci:", list_fib)
+List Fibonacci: [0, 1, 1, 2, 3]
+#Buat Fungsi baru untuk mencari bilangan prima antara 1-N
+>>> def fibonacci(n):
+...     if n <= 1:
+...            return n
+...     else:
+...            return fibonacci(n-1) + fibonacci(n-2)
+>>> n = int(input("Masukkan jumlah suku: "))
+Masukkan jumlah suku: 5
+>>> list_fib = []
+>>> for i in range(n):
+list_fib.append(fibonacci(i))
+>>> print("List Fibonacci jumlah suku:", n)
+List Fibonacci jumlah suku: 5
+>>> print("List Fibonacci:", list_fib)
+List Fibonacci: [0, 1, 1, 2, 3]
+#Buat grafik perbandingan antara fungsi linear dan fungsi kuadrat menggunakan matplotlib
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>>
+>>> def f_linear(x): return 2 x + 1
+...
+>>> def f_kuadrat(x): return x ** 2-4
+...
+>>> x = np.linspace (-5, 5, 100)
+>>>
+>>> plt.figure(figsize=(8, 6))
+<Figure size 800x600 with 0 Axes>
+>>> plt.plot(x, f_linear(x), label= "Linear: $y = 2x + 1$", color = 'blue')
+[<matplotlib.lines. Line2D object at 0x000002354F8BDA50>]
+>>> plt.plot(x, f_kuadrat(x), label= "Kuadrat: $y = x^2 4$", color = 'red')
+[<matplotlib.lines. Line2D object at 0x000002354F8BDF90>]
+>>>
+>>> plt.title("Perbandingan Fungsi Linear dan Fungsi Kuadrat")
+Text(0.5, 1.0, 'Perbandingan Fungsi Linear dan Fungsi Kuadrat')
+>>> plt.xlabel("y")
+Text(0.5, 0, 'y')
+>>> plt.ylabel("x")
+Text(0, 0.5, 'x')
+>>> plt.legend()
+<matplotlib.legend. Legend object at 0x0000023535407D60>
+>>> plt.grid(True)
+>>> plt.savefig("grafik.png")
+>>> plt.show()
